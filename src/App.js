@@ -4,8 +4,9 @@ import {
   Route
 } from "react-router-dom"
 import CreateNote from "./pages/CreateNote";
-import Notes from "./pages/Notes";
 import EditNote from "./pages/EditNote";
+import Notes from "./pages/Notes";
+
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Notes />} />
         <Route path="/create-note" element={<CreateNote />} />
         <Route path="/edit-note/:id" element={<EditNote />} />
+       
       </Routes>
     </Router>
   );
