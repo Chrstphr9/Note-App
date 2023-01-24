@@ -15,7 +15,6 @@ function App() {
         <Route path="/" element={<Notes />} />
         <Route path="/create-note" element={<CreateNote />} />
         <Route path="/edit-note/:id" element={<EditNote />} />
-       
       </Routes>
     </Router>
   );
