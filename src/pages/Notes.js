@@ -1,4 +1,5 @@
 import React from 'react'
+import dummyNotes from '../dummy_notes'
 import {
   CiSearch
 } from 'react-icons/ci'
@@ -11,6 +12,11 @@ const Notes = () => {
           {/* <input type="text" autoFocus placeholder='Keywords....' /> */}
           <button className='btn'> <CiSearch /> </button>
       </header>
+      <div className='note__container'>
+        {
+            dummyNotes.map(note => <NoteItem key={note.id } />)
+        }
+      </div>
     </section>
   )
 }
