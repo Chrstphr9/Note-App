@@ -10,13 +10,15 @@ import Notes from "./pages/Notes";
 
 function App() {
   return (
-    <Router>
+    <main id="app">
+      <Router>
       <Routes>
         <Route path="/" element={<Notes />} />
         <Route path="/create-note" element={<CreateNote />} />
         <Route path="/edit-note/:id" element={<EditNote />} />
       </Routes>
     </Router>
+    </main>
   );
 }
 
