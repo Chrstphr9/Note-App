@@ -18,7 +18,7 @@ const Notes = () => {
       </header>
       <div className="note__container">
         {dummyNotes.map((note) => (
-          <NoteItem key={note.id} />
+          <NoteItem key={note.id} note= {note} />
         ))}
       </div>
       <Link className="btn add__btn">
