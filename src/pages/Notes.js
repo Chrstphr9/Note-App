@@ -5,7 +5,7 @@ import { BsPlusLg } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import NoteItem from "../components/NoteItem";
 
-const Notes = () => {
+const Notes = ({notes}) => {
   return (
     <section>
       <header className="notes__header">
@@ -17,7 +17,7 @@ const Notes = () => {
         </button>
       </header>
       <div className="note__container">
-        {dummyNotes.map((note) => (
+        {notes.map((note) => (
           <NoteItem key={note.id} note= {note} />
         ))}
       </div>
