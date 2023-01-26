@@ -6,7 +6,7 @@ const CreateNote = () => {
   return (
     <section>
       <header className='create-note__header'>
-          <Link to='/'> <IoIosArrowBack/> </Link>
+          <Link to='/' className='btn'> <IoIosArrowBack/> </Link>
           <button className='btn lg primary'>Save</button>
       </header>
     </section>
