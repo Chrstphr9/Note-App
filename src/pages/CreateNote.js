@@ -9,7 +9,10 @@ const CreateNote = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(title, details);
+    if(title && details) {
+
+    }
+
   }
 
   return (
