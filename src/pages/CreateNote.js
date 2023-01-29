@@ -14,7 +14,7 @@ const CreateNote = () => {
     e.preventDefault();
 
     if(title && details) {
-        const note = {id: uuid(), title, details}
+        const note = {id: uuid(), title, details, date}
         console.log(note);
     }
 
