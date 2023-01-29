@@ -4,7 +4,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { v4 as uuid} from 'uuid'
 import useCreateDate from "../components/useCreateDate";
 
-const CreateNote = () => {
+const CreateNote = (setNotes) => {
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
 
