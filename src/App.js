@@ -7,7 +7,7 @@ import Notes from "./pages/Notes";
 import { useState } from "react";
 
 function App() {
-      const [notes, setNotes] = useState(dummyNotes)
+      const [notes, setNotes] = useState([])
 
   return (
     <main id="app">
