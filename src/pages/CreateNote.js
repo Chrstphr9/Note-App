@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
+import { v4 as uuid} from 'uuid'
 
 const CreateNote = () => {
   const [title, setTitle] = useState("");
@@ -10,7 +11,7 @@ const CreateNote = () => {
     e.preventDefault();
 
     if(title && details) {
-
+        const note = {id: uuid(), title, details}
     }
 
   }
