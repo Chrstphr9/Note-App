@@ -12,6 +12,7 @@ const CreateNote = () => {
 
     if(title && details) {
         const note = {id: uuid(), title, details}
+        console.log(note);
     }
 
   }
