@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { v4 as uuid} from 'uuid'
 import useCreateDate from "../components/useCreateDate";
@@ -8,8 +8,8 @@ import notes from "../dummy_notes";
 const CreateNote = ({setNotes}) => {
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
-
   const date = useCreateDate();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,6 +18,7 @@ const CreateNote = ({setNotes}) => {
         const note = {id: uuid(), title, details, date}
         setNotes(prevNotes => [note,  ...prevNotes ])
         // console.log(note);
+        navigate('/')
     }
 
   }
