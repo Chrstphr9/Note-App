@@ -41,7 +41,7 @@ const useCreateDate = () => {
       break;
   }
 
-  const date = `${monthName} ${date0bj.getDate()}, ${dateObj.getFullYear()} [$ {dateObj.getHours()}:${dateObj.getMinutes()}:${dateObj.getSecond()}]`;
+  const date = `${monthName} ${dateObj.getDate()}, ${dateObj.getFullYear()} [$ {dateObj.getHours()}:${dateObj.getMinutes()}:${dateObj.getSecond()}]`;
 return date;  
 };
 
