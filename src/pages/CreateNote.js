@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { v4 as uuid} from 'uuid'
 import useCreateDate from "../components/useCreateDate";
+import notes from "../dummy_notes";
 
 const CreateNote = (setNotes) => {
   const [title, setTitle] = useState("");
@@ -15,6 +16,7 @@ const CreateNote = (setNotes) => {
 
     if(title && details) {
         const note = {id: uuid(), title, details, date}
+        setNotes(prevNotes => [note,  ...prevNotes ])
         console.log(note);
     }
 
