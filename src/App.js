@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CreateNote from "./pages/CreateNote";
 import EditNote from "./pages/EditNote";
+import { useEffect } from "react";
 import Notes from "./pages/Notes";
 // import dummyNotes from './dummy_notes';
 
