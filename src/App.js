@@ -7,18 +7,21 @@ import Notes from "./pages/Notes";
 import { useState } from "react";
 
 function App() {
-      const [notes, setNotes] = useState([])
-      console.log(notes);
+  const [notes, setNotes] = useState([]);
+  console.log(notes);
 
   return (
     <main id="app">
       <Router>
         <Routes>
           <Route path="/" element={<Notes notes={notes} />} />
-          <Route path="/create-note" element={<CreateNote setNotes={setNotes}/>} />
+          <Route
+            path="/create-note"
+            element={<CreateNote setNotes={setNotes} />}
+          />
           <Route path="/edit-note/:id" element={<EditNote />} />
         </Routes>
-      </Router>
+      </Router>  
     </main>
   );
 }
