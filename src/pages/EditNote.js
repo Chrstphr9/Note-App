@@ -1,9 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { IoIosArrowBack } from 'react-icons/io';
 
-const EditNote = () => {
+const EditNote = ({notes, setNotes}) => {
+  const {id} = useParams();
   return (
     <section>
     <header className='create-note__header'>
