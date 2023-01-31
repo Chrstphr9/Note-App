@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoIosArrowBack } from "react-icons/io";
 import useCreateDate from "../components/useCreateDate";
@@ -11,6 +11,7 @@ const EditNote = ({ notes, setNotes }) => {
   const [title, setTitle] = useState(note.title)
   const [details, setDetails] = useState(note.details)
   const date = useCreateDate();
+  const navigate = useNavigate();
 
   const handleForm = (e) => {
     e.preventDefault();
@@ -18,7 +19,7 @@ const EditNote = ({ notes, setNotes }) => {
     if (title && details) {
       const newNote = {...note, title, details
     }
-    const newNotes =notes.maps(item => {
+    const newNotes =notes.map(item => {
       if(item.id ==id) {
         item = newNote;
       }
@@ -27,7 +28,7 @@ const EditNote = ({ notes, setNotes }) => {
 
     setNotes(newNotes);
   }
-
+    navigate('/')
   }
   
 
@@ -38,12 +39,12 @@ const EditNote = ({ notes, setNotes }) => {
           {" "}
           <IoIosArrowBack />{" "}
         </Link>
-        <button className="btn lg primary">Save</button>
+        <button className="btn lg primary" onClick={handleForm}>Save</button>
         <button className="btn lg danger">
           <RiDeleteBin6Line />
         </button>
       </header>
-      <form className="create-note__form">
+      <form className="create-note__form" onSubmit={handleForm}>
         <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} autoFocus />
         <textarea rows="28" placeholder="Note Details...." value={details} onChange={(e) => setDetails(e.target.value)}></textarea>
       </form>
