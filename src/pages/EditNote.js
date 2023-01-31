@@ -8,8 +8,8 @@ const EditNote = ({ notes, setNotes }) => {
   const { id } = useParams();
   const note = notes.find((item) => item.id == id);
   // console.log(note);
-  const [title, setTitle] = useState(note.title)
-  const [details, setDetails] = useState(note.details)
+  const [title, setTitle] = useState(note.title);
+  const [details, setDetails] = useState(note.details);
   const date = useCreateDate();
   const navigate = useNavigate();
 
@@ -17,36 +17,54 @@ const EditNote = ({ notes, setNotes }) => {
     e.preventDefault();
 
     if (title && details) {
-      const newNote = {...note, title, details, date
+      const newNote = { ...note, title, details, date };
+      const newNotes = notes.map((item) => {
+        if (item.id == id) {
+          item = newNote;
+        }
+        return item;
+      });
+
+      setNotes(newNotes);
     }
-    const newNotes =notes.map(item => {
-      if(item.id ==id) {
-        item = newNote;
-      }
-      return item;
-    })
+    navigate("/");
+  };
+
+  const handleDelete = () => {
+    const newNotes = notes.filter((item) => item.id != id);
 
     setNotes(newNotes);
-  }
-    navigate('/')
-  }
-  
+    navigate("/");
+  };
 
-  return ( 
+  return (
     <section>
       <header className="create-note__header">
         <Link to="/" className="btn">
           {" "}
           <IoIosArrowBack />{" "}
         </Link>
-        <button className="btn lg primary" onClick={handleForm}>Save</button>
+        <button className="btn lg primary" onClick={handleForm}>
+          Save
+        </button>
         <button className="btn lg danger">
           <RiDeleteBin6Line />
         </button>
       </header>
       <form className="create-note__form" onSubmit={handleForm}>
-        <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} autoFocus />
-        <textarea rows="28" placeholder="Note Details...." value={details} onChange={(e) => setDetails(e.target.value)}></textarea>
+        <input
+          type="text"
+          placeholder="Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          autoFocus
+        />
+        <textarea
+          rows="28"
+          placeholder="Note Details...."
+          value={details}
+          onChange={(e) => setDetails(e.target.value)}
+        ></textarea>
       </form>
     </section>
   );
