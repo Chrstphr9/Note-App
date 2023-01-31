@@ -47,7 +47,7 @@ const EditNote = ({ notes, setNotes }) => {
         <button className="btn lg primary" onClick={handleForm}>
           Save
         </button>
-        <button className="btn lg danger">
+        <button className="btn lg danger" onClick={handleDelete}>
           <RiDeleteBin6Line />
         </button>
       </header>
