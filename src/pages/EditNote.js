@@ -26,7 +26,7 @@ const EditNote = ({ notes, setNotes }) => {
       </header>
       <form className="create-note__form">
         <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} autoFocus />
-        <textarea rows="28" placeholder="Note Details...."></textarea>
+        <textarea rows="28" placeholder="Note Details...." value={details} onChange={(e) => setDetails(e.target.value)}></textarea>
       </form>
     </section>
   );
