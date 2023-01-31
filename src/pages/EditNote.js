@@ -18,7 +18,14 @@ const EditNote = ({ notes, setNotes }) => {
     if (title && details) {
       const newNote = {...note, title, details
     }
-    
+    const newNotes =notes.maps(item => {
+      if(item.id ==id) {
+        item = newNote;
+      }
+      return item;
+    })
+
+    setNotes(newNotes);
   }
 
   }
