@@ -2,14 +2,26 @@ import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoIosArrowBack } from "react-icons/io";
+import useCreateDate from "../components/useCreateDate";
 
 const EditNote = ({ notes, setNotes }) => {
   const { id } = useParams();
   const note = notes.find((item) => item.id == id);
-  console.log(note);
+  // console.log(note);
   const [title, setTitle] = useState(note.title)
   const [details, setDetails] = useState(note.details)
+  const date = useCreateDate();
 
+  const handleForm = (e) => {
+    e.preventDefault();
+
+    if (title && details) {
+      const newNote = {...note, title, details
+    }
+    
+  }
+
+  }
   
 
   return ( 
