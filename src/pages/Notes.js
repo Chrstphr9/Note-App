@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import NoteItem from "../components/NoteItem";
 
 const Notes = ({notes}) => {
+  console.log(notes)
   return (
     <section>
       <header className="notes__header">
