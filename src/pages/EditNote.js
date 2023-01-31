@@ -17,7 +17,7 @@ const EditNote = ({ notes, setNotes }) => {
     e.preventDefault();
 
     if (title && details) {
-      const newNote = {...note, title, details
+      const newNote = {...note, title, details, date
     }
     const newNotes =notes.map(item => {
       if(item.id ==id) {
