@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 import NoteItem from "../components/NoteItem";
 
 const Notes = ({notes}) => {
-  const [showSearch, setShowSearch] = useState();
+  const [showSearch, setShowSearch] = useState(false );
   return (
     <section>
       <header className="notes__header">
-        <h2> My Notes </h2>
-        <input type="text" autoFocus placeholder='Keywords....' />
-        <button className="btn">
+        {!showSearch &&<h2> My Notes </h2>}
+        {showSearch &&<input type="text" autoFocus placeholder='Keywords....' />}
+        <button className="btn" onClick={() => setShowSearch(prevState => !prevState)}>
           {" "}
           <CiSearch />{" "}
         </button>
