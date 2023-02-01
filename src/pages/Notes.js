@@ -7,11 +7,17 @@ import NoteItem from "../components/NoteItem";
 
 const Notes = ({ notes }) => {
   const [showSearch, setShowSearch] = useState(false);
-  const [text, setText] = useState('');
-  const [ filteredNotes, setFilteredNotes] = useState(notes)
+  const [text, setText] = useState("");
+  const [filteredNotes, setFilteredNotes] = useState(notes);
 
   const handleSearch = () => {
-      
+    setFilteredNotes(
+      notes.filter((note) => {
+        if (note.ittle.toLowerCase().match(text.toLocaleLowerCase)) {
+          return note;
+        }
+      })
+    );
   };
 
   return (
@@ -22,7 +28,10 @@ const Notes = ({ notes }) => {
           <input
             type="text"
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(e) => {
+              setText(e.target.value);
+              handleSearch;
+            }}
             autoFocus
             placeholder="Keywords...."
           />
@@ -36,8 +45,7 @@ const Notes = ({ notes }) => {
         </button>
       </header>
       <div className="note__container">
-        {
-        filteredNotes.notes.map((note) => (
+        {filteredNotes.notes.map((note) => (
           <NoteItem key={note.id} note={note} />
         ))}
       </div>
