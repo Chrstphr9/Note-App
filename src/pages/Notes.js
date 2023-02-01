@@ -11,7 +11,7 @@ const Notes = ({notes}) => {
     <section>
       <header className="notes__header">
         <h2> My Notes </h2>
-        {/* <input type="text" autoFocus placeholder='Keywords....' /> */}
+        <input type="text" autoFocus placeholder='Keywords....' />
         <button className="btn">
           {" "}
           <CiSearch />{" "}
