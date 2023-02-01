@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import dummyNotes from "../dummy_notes";
 import { CiSearch } from "react-icons/ci";
 import { BsPlusLg } from "react-icons/bs";
@@ -19,6 +19,8 @@ const Notes = ({ notes }) => {
       })
     );
   };
+
+  useEffect(handleSearch, [text])
 
   return (
     <section>
