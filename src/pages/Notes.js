@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import dummyNotes from "../dummy_notes";
 import { CiSearch } from "react-icons/ci";
 import { BsPlusLg } from "react-icons/bs";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import NoteItem from "../components/NoteItem";
 
 const Notes = ({notes}) => {
-  console.log(notes)
+  const [showSearch, setShowSearch] = useState();
   return (
     <section>
       <header className="notes__header">
