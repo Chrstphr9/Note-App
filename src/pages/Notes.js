@@ -13,7 +13,7 @@ const Notes = ({ notes }) => {
   const handleSearch = () => {
     setFilteredNotes(
       notes.filter((note) => {
-        if (note.ittle.toLowerCase().match(text.toLocaleLowerCase)) {
+        if (note.title.toLowerCase().match(text.toLocaleLowerCase)) {
           return note;
         }
       })
@@ -26,18 +26,18 @@ const Notes = ({ notes }) => {
     <section>
       <header className="notes__header">
         {!showSearch && <h2> My Notes </h2>}
-        {showSearch && (
+        {showSearch && 
           <input
             type="text"
             value={text}
             onChange={(e) => {
               setText(e.target.value);
-              handleSearch;
+              handleSearch();
             }}
             autoFocus
             placeholder="Keywords...."
           />
-        )}
+        }
         <button
           className="btn"
           onClick={() => setShowSearch((prevState) => !prevState)}
@@ -47,9 +47,9 @@ const Notes = ({ notes }) => {
         </button>
       </header>
       <div className="note__container">
-        {filteredNotes.notes.map((note) => (
+        {filteredNotes.map(note => 
           <NoteItem key={note.id} note={note} />
-        ))}
+        )}
       </div>
       <Link to="/create-note" className="btn add__btn">
         {" "}
