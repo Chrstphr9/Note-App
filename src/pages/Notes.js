@@ -12,15 +12,15 @@ const Notes = ({ notes }) => {
 
   const handleSearch = () => {
     setFilteredNotes(
-      notes.filter((note) => {
-        if (note.title.toLowerCase().match(text.toLocaleLowerCase)) {
+      notes.filter(note => {
+        if (note.title.toLowerCase().match(text.toLocaleLowerCase())) {
           return note;
         }
       })
     );
   };
 
-  useEffect(handleSearch, [text])
+  useEffect(handleSearch, [text])  
 
   return (
     <section>
@@ -28,15 +28,15 @@ const Notes = ({ notes }) => {
         {!showSearch && <h2> My Notes </h2>}
         {showSearch && 
           <input
-            type="text"
-            value={text}
-            onChange={(e) => {
-              setText(e.target.value);
-              handleSearch();
-            }}
-            autoFocus
-            placeholder="Keywords...."
-          />
+          type="text"
+          value={text}
+          onChange={(e) => {
+            setText(e.target.value);
+            handleSearch();
+          }}
+          autoFocus
+          placeholder="Keywords...."
+        />
         }
         <button
           className="btn"
