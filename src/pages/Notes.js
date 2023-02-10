@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import dummyNotes from "../dummy_notes";
 import { CiSearch } from "react-icons/ci";
+import { MdClose } from "react-icons/md";
 import { BsPlusLg } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import NoteItem from "../components/NoteItem";
@@ -43,7 +44,8 @@ const Notes = ({ notes }) => {
           onClick={() => setShowSearch((prevState) => !prevState)}
         >
           {" "}
-          <CiSearch />{" "}
+          {showSearch ? <MdClose/> :
+          <CiSearch />}{" "}
         </button>
       </header>
       <div className="note__container">
