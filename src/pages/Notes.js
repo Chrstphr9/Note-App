@@ -26,7 +26,7 @@ const Notes = ({ notes }) => {
   return (
     <section>
       <header className="notes__header">
-        {!showSearch && <h2> My Notes </h2>}
+        {!showSearch && <h2> MY NOTES </h2>}
         {showSearch && 
           <input
           type="text"
