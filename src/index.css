@@ -11,7 +11,7 @@
 }
 
 :root {
-    --color-bg-dark: #3a3a3a;
+    --color-bg-dark: #697a98;
     --color-bg-black: #19335a;
     --color-white: #fefefe;
     --color-primary: #697a98;
@@ -87,7 +87,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1.6rem 2.5rem;
+    padding: 0 1.6rem 1.5rem;
     background: var(--color-bg-black);
     z-index: 9;
 }
