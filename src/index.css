@@ -58,8 +58,8 @@ body {
 
 #app {
     background: var(--color-bg-black);
-    height: 48rem;
-    width: 24rem;
+    height: 40rem;
+    width: 54rem;
     padding: 2rem 1.6rem;
     overflow-y: scroll;
     position: relative;
@@ -87,7 +87,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1.6rem 1.5rem;
+    padding: 0 1.6rem 2.5rem;
     background: var(--color-bg-black);
     z-index: 9;
 }
@@ -126,6 +126,7 @@ h2 {
     cursor: pointer;
     transition: all 300ms ease;
     color: var(--color-white);
+    border-radius: 5px;
 }
 
 .note:hover {

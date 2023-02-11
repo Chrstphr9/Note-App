@@ -48,7 +48,7 @@ const Notes = ({ notes }) => {
           <CiSearch />}{" "}
         </button>
       </header>
-      <div className="note__container">
+      <div className="notes__container">
         {filteredNotes.length == 0 && <p className="empty__notes">No Notes Found.</p>}
         {filteredNotes.map(note => 
           <NoteItem key={note.id} note={note} />
